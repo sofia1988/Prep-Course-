@@ -174,6 +174,7 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
+ // probar token mas de una vez
 
   producto.calcularPrecioDescuento = function(){
      rdo = producto.precio * producto.porcentajeDeDescuento
