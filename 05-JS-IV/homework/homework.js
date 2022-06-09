@@ -105,9 +105,9 @@ function actualizarPassword (usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
   // Devuelve el objeto
   // Tu código:
- 
-  usuario.password= nuevaPassword
- //mal
+  usuario["password"] = nuevaPassword
+
+  return usuario
 }
 
 function agregarAmigo (usuario, nuevoAmigo) {
@@ -128,22 +128,10 @@ function pasarUsuarioAPremium (usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
-  usuarios =[
-    usuario1={
-      esPremium:true
-    },
-
-    usuario2={
-      esPremium:true
-    },
-
-    usuario3={
-      esPremium:true
-    }
-
-  ]
-   return usuarios
-//mal
+   for(let i= 0; i < usuarios.length;i++){
+    usuarios[i].esPremium = true
+  }
+  return usuarios
 }
 
 function sumarLikesDeUsuario (usuario) {
@@ -156,14 +144,14 @@ function sumarLikesDeUsuario (usuario) {
   // Tu código:
   usuario = {
     posts:[
-       post1 ={
-         likes:5
+       {
+         likes:100
        },
-       post2 ={
-        likes:10
+       {
+        likes:100
       },
-       post3 ={
-        likes:15
+      {
+        likes:86
       }
     ]
   }
@@ -186,17 +174,15 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-  var preciocondescuento;
-  producto = {
-    nombre:"computadora",
-    precio:10000,
-    porcentajeDeDescuento:0.8
-  }
+
   producto.calcularPrecioDescuento = function(){
      rdo = producto.precio * producto.porcentajeDeDescuento
-     preciocondescuento =producto.precio - rdo
+     descuento = producto.precio - rdo
+     return descuento
   }
-  return producto.calcularPrecioDescuento()
+
+  return producto
+
 }
   
 
